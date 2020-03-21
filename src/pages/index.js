@@ -19,7 +19,7 @@ const IndexPage = () => (
     </p>
 
     <script type="text/javascript">
-      {Boolean(window) &&
+      {Boolean(typeof window !== `undefined`) &&
         (function(d, m) {
           var kommunicateSettings = {
             appId: "39fd4adf1615bc0a0ec2a4bc20738caac",
