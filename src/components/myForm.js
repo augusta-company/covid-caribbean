@@ -1,10 +1,6 @@
 import React from "react"
 import { ConversationalForm } from "conversational-form"
 
-// import Layout from "../components/layout"
-// import SEO from "../components/seo"
-// import Form from "../components/myForm"
-
 export default class MyForm extends React.Component {
   constructor(props) {
     super(props)
@@ -34,7 +30,6 @@ export default class MyForm extends React.Component {
         // loadExternalStyleSheet: false
       },
       tags: this.formFields,
-      theme: "blue",
     })
     this.elem.appendChild(this.cf.el)
   }
@@ -48,11 +43,6 @@ export default class MyForm extends React.Component {
   }
 
   render() {
-    return (
-      <div
-        style={{ height: "100vh", position: "relative" }}
-        ref={ref => (this.elem = ref)}
-      />
-    )
+    return <div ref={ref => (this.elem = ref)} />
   }
 }
