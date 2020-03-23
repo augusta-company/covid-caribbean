@@ -1,42 +1,104 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import {
+  UrgentWarning,
+  MediumWarning,
+  LightWarning,
+} from "../components/warnings"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h2 style={{ textAlign: `center` }}>
-      Don't overwhelm the Health system unnecessarily.
-    </h2>
+import "../styles.css"
 
-    <h3>How does it work ?</h3>
+const MildSymptomps = (addItem, index) => (
+  <div key="mildSymptomps" className="card">
+    <p>Are you experiencing any of the following:</p>
+    <ul>
+      <li>Shortness of breath at rest</li>
+      <li>Inability to lie down because of difficulty breathing</li>
+      <li>
+        Chronic health conditions that you are having difficulty managing
+        because of difficulty breathing
+      </li>
+    </ul>
 
-    <p>
-      On the bottom right corner of the screen you will se a button that will
-      trigger a chat with our bot. Answer yes or no to its question to see if
-      you need to get tested.
-    </p>
-
-    <script type="text/javascript">
-      {Boolean(typeof window !== `undefined`) &&
-        (function(d, m) {
-          var kommunicateSettings = {
-            appId: "39fd4adf1615bc0a0ec2a4bc20738caac",
-            popupWidget: true,
-            automaticChatOpenOnNavigation: true,
-          }
-          var s = document.createElement("script")
-          s.type = "text/javascript"
-          s.async = true
-          s.src = "https://widget.kommunicate.io/v2/kommunicate.app"
-          var h = document.getElementsByTagName("head")[0]
-          h.appendChild(s)
-          window.kommunicate = m
-          m._globals = kommunicateSettings
-        })(document, window.kommunicate || {})}
-    </script>
-  </Layout>
+    <div>
+      <button onClick={() => addItem("LightSymptomps", index)}>No</button>
+      <button onClick={() => addItem("MediumWarning", index)}>Yes</button>
+    </div>
+  </div>
 )
+
+const LightSymptomps = (addItem, index) => (
+  <div key="lightSymptomps" className="card">
+    <p>Are you experiencing any of the following:</p>
+    <ul>
+      <li>Fever</li>
+      <li>Cough</li>
+      <li>Sneezing</li>
+      <li>Sore throat</li>
+    </ul>
+
+    <div>
+      <button onClick={() => addItem("MildSymptomps", index)}>No</button>
+      <button onClick={() => addItem("LightWarning", index)}>Yes</button>
+    </div>
+  </div>
+)
+
+const replaceItems = (array, index, fn) => {
+  return [...array.slice(0, index), fn]
+}
+
+const IndexPage = () => {
+  const [displayItems, setDisplayItems] = useState([])
+
+  const addItem = (action, index) => {
+    switch (action) {
+      case "UrgentWarning":
+        setDisplayItems(replaceItems(displayItems, index, UrgentWarning))
+        break
+      case "MediumWarning":
+        setDisplayItems(replaceItems(displayItems, index, MediumWarning))
+        break
+      case "LightWarning":
+        setDisplayItems(replaceItems(displayItems, index, LightWarning))
+        break
+      case "MildSymptomps":
+        setDisplayItems(replaceItems(displayItems, index, MildSymptomps))
+        break
+      case "LightSymptomps":
+        setDisplayItems(replaceItems(displayItems, index, LightSymptomps))
+        break
+      default:
+        setDisplayItems([...displayItems])
+    }
+  }
+  return (
+    <Layout>
+      <SEO title="Home" />
+
+      <div className="card">
+        <p>Are you experiencing any of the following:</p>
+        <ul>
+          <li>
+            Severe difficulty breathing (e.g. struggling to breathe or speaking
+            in single words)
+          </li>
+          <li>Severe chest pain</li>
+          <li>Having a very hard time waking up</li>
+          <li>Feeling confused</li>
+          <li>Losing consciousness</li>
+        </ul>
+
+        <div>
+          <button onClick={() => addItem("MildSymptomps", 0)}>No</button>
+          <button onClick={() => addItem("UrgentWarning", 0)}>Yes</button>
+        </div>
+      </div>
+      {displayItems.map((item, index) => item(addItem, index + 1))}
+    </Layout>
+  )
+}
 
 export default IndexPage
