@@ -1172,6 +1172,62 @@
     lodash.debounce "^4.0.8"
     react-dev-utils "^9.1.0"
 
+"@progress/kendo-popup-common@^1.2.2":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-popup-common/-/kendo-popup-common-1.7.0.tgz#d0d29dbc5eacdaba8803aa3d0f69f8a8ad05dbff"
+  integrity sha512-KxPIXDkirDpJaF/UWFKbe8QpbO5CwdQH/HyNT5Fj1qZb25YaO68VZCisls2qkcEVPHBlXesDcN3QJlt4vJ6tJw==
+
+"@progress/kendo-react-animation@3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-animation/-/kendo-react-animation-3.11.0.tgz#0402dcb63ca26b2c27adfbb053eec73a05876a1a"
+  integrity sha512-hMrFIRsn8khSKTc+cH4okK2ruyhajJyjgaBUC9oh3PwDFgvI7/sDzXktUnv6m/E3rnrWjEdF3uuBV75uEpII3g==
+  dependencies:
+    "@progress/kendo-react-common" "3.11.0"
+    prop-types "^15.6.0"
+    react-transition-group "^2.2.0"
+
+"@progress/kendo-react-buttons@^3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-buttons/-/kendo-react-buttons-3.11.0.tgz#b8c72629a84a4328c93dc851ef8c3230191220b4"
+  integrity sha512-+cVYkarj/MAuQk08EqBm1OZRx/QagZZ6BanlI8JCtb/GJUYDRoi17vWStR4iIvIZ849qAL3l0GsqSt2eAZHHZw==
+  dependencies:
+    "@progress/kendo-react-common" "3.11.0"
+    "@progress/kendo-react-popup" "3.11.0"
+    prop-types "^15.6.0"
+
+"@progress/kendo-react-common@3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-common/-/kendo-react-common-3.11.0.tgz#b9d3a0e32d0571ae754ad2d68c0fd3bbee1063a1"
+  integrity sha512-QCLQh8w1qaTqzGAxey8Sn94xafHfNguccsuFzVWsqteuJd71HfLjwToMuuRSQFrMTs3ksqndUszvjrLB0gp/PA==
+  dependencies:
+    "@telerik/kendo-draggable" "2.0.0"
+    prop-types "^15.6.0"
+
+"@progress/kendo-react-conversational-ui@^3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-conversational-ui/-/kendo-react-conversational-ui-3.11.0.tgz#4da63368150df23dba46e4bf89d02b4da34d8b93"
+  integrity sha512-nP9uBLdZgsrvdg4+fDrP9yXhm5RJbocTkJyUrRhDO07kKiGIE6l3wc2R+QLXUSiL9Dgyg2uda2lMVcZ/i1BJuw==
+  dependencies:
+    "@progress/kendo-react-common" "3.11.0"
+
+"@progress/kendo-react-intl@^3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-intl/-/kendo-react-intl-3.11.0.tgz#6605f2efc0240196f9324fedd70fe031b1dff832"
+  integrity sha512-NQSloAE+LXmJioWO1oswE+/+fcoU3Vm0A0R+osu7kQ1bKRQVzEYpGbziM7isjU7alEUKl/kSuRM2GYWxnylUmg==
+  dependencies:
+    "@telerik/kendo-intl" "^2.1.0"
+    prop-types "^15.6.0"
+
+"@progress/kendo-react-popup@3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-popup/-/kendo-react-popup-3.11.0.tgz#effbf394e7cb3ed7735283089fbc2b91bc869a14"
+  integrity sha512-81VLaFk0pVkYtp5Ilhojluglt9JAA7xWzN1drFu2WZQmvbEPnhirJfwNy+wijWzuqg4wl8iiLhTzn6e5boZEzw==
+  dependencies:
+    "@progress/kendo-popup-common" "^1.2.2"
+    "@progress/kendo-react-animation" "3.11.0"
+    "@progress/kendo-react-common" "3.11.0"
+    prop-types "^15.6.0"
+
 "@reach/router@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.3.tgz#58162860dce6c9449d49be86b0561b5ef46d80db"
@@ -1198,6 +1254,16 @@
   integrity sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
   dependencies:
     defer-to-connect "^1.0.1"
+
+"@telerik/kendo-draggable@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@telerik/kendo-draggable/-/kendo-draggable-2.0.0.tgz#95ca6fdc56022d80ab5d0fec98463e2bdf4fc3ec"
+  integrity sha512-6fZcwVZQNh9ovWbueo2VFgpFxktWdxaABe/gVZ+dJy4h+ngkoSr0HSmfUJY5QupMQ1RvLA9hr3Eficbqx+gU0Q==
+
+"@telerik/kendo-intl@^2.1.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@telerik/kendo-intl/-/kendo-intl-2.1.1.tgz#d002b1dd4143d1adf17bc9d5a50cdc451a92ffd0"
+  integrity sha512-aAJCnaWpKdnKpqrZgXf6LlgH75epc0byDoYxyzPUEPuKizQ5JTEP1KwQa4y0qkLcTgC3XSUQegadXOLzJ6phgg==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -1697,6 +1763,11 @@ anymatch@~3.1.1:
   dependencies:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
+
+api-ai-javascript@^2.0.0-beta.21:
+  version "2.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/api-ai-javascript/-/api-ai-javascript-2.0.0-beta.21.tgz#43465f6835dc4f0e14e0311c0bb64017f3148b5b"
+  integrity sha1-Q0ZfaDXcTw4U4DEcC7ZAF/MUi1s=
 
 application-config-path@^0.1.0:
   version "0.1.0"
@@ -9460,7 +9531,7 @@ prompts@^2.3.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9792,6 +9863,16 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react-transition-group@^2.2.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
+  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+  dependencies:
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
 
 react@^16.12.0, react@^16.8.0:
   version "16.12.0"

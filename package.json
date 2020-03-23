@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@progress/kendo-react-buttons": "^3.11.0",
+    "@progress/kendo-react-conversational-ui": "^3.11.0",
+    "@progress/kendo-react-intl": "^3.11.0",
+    "api-ai-javascript": "^2.0.0-beta.21",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-manifest": "^2.2.48",
