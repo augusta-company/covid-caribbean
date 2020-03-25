@@ -4,17 +4,19 @@ import { Button } from "./button"
 export const MildSymptomps = (dispatch, index, items) => {
   return (
     <div key="mildSymptomps" className="card">
-      <p>Are you experiencing any of the following:</p>
-      <ul>
-        <li>Mild to moderate shortness of breath</li>
-        <li>Inability to lie down because of difficulty breathing</li>
-        <li>
-          Chronic health conditions that you are having difficulty managing
-          because of difficulty breathing
-        </li>
-      </ul>
+      <div className="card__info">
+        <p>Are you experiencing any of the following:</p>
+        <ul>
+          <li>Mild to moderate shortness of breath</li>
+          <li>Inability to lie down because of difficulty breathing</li>
+          <li>
+            Chronic health conditions that you are having difficulty managing
+            because of difficulty breathing
+          </li>
+        </ul>
+      </div>
 
-      <div>
+      <div className="btn_container">
         <Button
           selected={items[index]?.flag === "LightSymptomps"}
           onClick={() => dispatch({ type: "LightSymptomps", index })}

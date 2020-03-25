@@ -4,12 +4,14 @@ import { Button } from "./button"
 export const TravelOutside = (dispatch, index, items) => {
   return (
     <div key="travelOutside" className="card">
-      <p>
-        Have you travelled to any countries outside Canada (including the United
-        States) within the last 14 days?
-      </p>
+      <div className="card__info">
+        <p>
+          Have you travelled to any countries outside Canada (including the
+          United States) within the last 14 days?
+        </p>
+      </div>
 
-      <div>
+      <div className="btn_container">
         <Button
           selected={items[index]?.flag === "ProvideCare"}
           onClick={() =>

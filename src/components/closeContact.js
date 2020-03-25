@@ -4,13 +4,15 @@ import { Button } from "./button"
 export const CloseContact = (dispatch, index, items, symptoms) => {
   return (
     <div key="closeContact" className="card">
-      <p>
-        Did you have close contact with a person who travelled outside of
-        Trinidad and tobago in the last 14 days who has become ill (cough,
-        fever, sneezing, or sore throat)?
-      </p>
+      <div className="card__info">
+        <p>
+          Did you have close contact with a person who travelled outside of
+          Trinidad and tobago in the last 14 days who has become ill (cough,
+          fever, sneezing, or sore throat)?
+        </p>
+      </div>
 
-      <div>
+      <div className="btn_container">
         <Button
           selected={
             items[index]?.flag === "Isolate10Warning-no" ||

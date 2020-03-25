@@ -5,135 +5,11 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Button } from "../components/button"
-import { LightSymptomps } from "../components/lightSymptoms"
-import { MildSymptomps } from "../components/mildSymptoms"
-import { ProvideCare } from "../components/provideCare"
-import { CloseContact } from "../components/closeContact"
-import { TravelOutside } from "../components/travelOutside"
-import {
-  UrgentWarning,
-  MediumWarning,
-  LightWarning,
-  Isolate10Warning,
-  Isolate14Warning,
-  SelfMonitor,
-  NoSymptoms,
-} from "../components/warnings"
 import CoatWithName from "../svgs/coat-with-name.svg"
+import reducer from "../reducer"
 import "../styles.css"
 
-const replaceItems = (array, index, obj) => {
-  return [...array.slice(0, index), obj]
-}
-
 const initalState = { items: [], symptoms: false }
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "UrgentWarning":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: UrgentWarning,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "MediumWarning":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: MediumWarning,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "LightWarning":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: LightWarning,
-        }),
-        symptoms: true,
-      }
-    case "MildSymptomps":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: MildSymptomps,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "LightSymptomps":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: LightSymptomps,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "ProvideCare":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: ProvideCare,
-          yes: action.yes || undefined,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "TravelOutside":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: TravelOutside,
-        }),
-        symptoms: false,
-      }
-    case "CloseContact":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: CloseContact,
-          symptoms: action.symptoms,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "Isolate10Warning":
-    case "Isolate10Warning-yes":
-    case "Isolate10Warning-no":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: Isolate10Warning,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "Isolate14Warning":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: Isolate14Warning,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "SelfMonitor":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: SelfMonitor,
-        }),
-        symptoms: state.symptoms,
-      }
-    case "NoSymptoms":
-      return {
-        items: replaceItems(state.items, action.index, {
-          flag: action.type,
-          cmp: NoSymptoms,
-        }),
-        symptoms: state.symptoms,
-      }
-    default:
-      return { items: replaceItems([...state.items]) }
-  }
-}
 
 const query = graphql`
   query {
@@ -156,7 +32,9 @@ const IndexPage = () => {
       <SEO title="Home" />
 
       <CoatWithName />
-      <h1>Trinidad and Tobago COVID-19 Symptom Self-Assessment Tool</h1>
+      <h1 className="title">
+        Trinidad and Tobago COVID-19 Symptom Self-Assessment Tool
+      </h1>
       <h2 style={{ display: "flex", alignItems: "center" }}>
         Powered by{" "}
         <Img
@@ -258,19 +136,20 @@ const IndexPage = () => {
         </p>
       </div>
       <div className="card">
-        <p>Are you experiencing any of the following:</p>
-        <ul>
-          <li>
-            Severe difficulty breathing (e.g. struggling to breathe or speaking
-            in single words)
-          </li>
-          <li>Severe chest pain</li>
-          <li>Having a very hard time waking up</li>
-          <li>Feeling confused</li>
-          <li>Losing consciousness</li>
-        </ul>
-
-        <div>
+        <div className="card__info">
+          <p>Are you experiencing any of the following:</p>
+          <ul>
+            <li>
+              Severe difficulty breathing (e.g. struggling to breathe or
+              speaking in single words)
+            </li>
+            <li>Severe chest pain</li>
+            <li>Having a very hard time waking up</li>
+            <li>Feeling confused</li>
+            <li>Losing consciousness</li>
+          </ul>
+        </div>
+        <div className="btn_container">
           <Button
             selected={state.items[0]?.flag === "MildSymptomps"}
             onClick={() => dispatch({ type: "MildSymptomps", index: 0 })}

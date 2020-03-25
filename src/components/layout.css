@@ -5,6 +5,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: #f2efea;
+  font-family: "Montserrat", Helvetica, sans-serif;
 }
 
 *, *::before, *::after {

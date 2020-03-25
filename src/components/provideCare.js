@@ -4,14 +4,16 @@ import { Button } from "./button"
 export const ProvideCare = (dispatch, index, items, symptoms) => {
   return (
     <div key="provideCare" className="card">
-      <p>
-        Did you <strong>provide care</strong> or have 
-        <strong>close contact</strong> with a person with COVID-19
-        (probable or confirmed) while they were ill (cough, fever, sneezing, or
-        sore throat)?
-      </p>
+      <div className="card__info">
+        <p>
+          Did you <strong>provide care</strong> or have 
+          <strong>close contact</strong> with a person with COVID-19
+          (probable or confirmed) while they were ill (cough, fever, sneezing,
+          or sore throat)?
+        </p>
+      </div>
 
-      <div>
+      <div className="btn_container">
         <Button
           selected={items[index]?.flag === "CloseContact"}
           onClick={() =>
