@@ -3,10 +3,10 @@ import React from "react"
 export const Isolate10Warning = () => (
   <div key="isolate10" className="card">
     <div className="card__info">
-      <p>
-        Please <strong>self-isolate for 10 days</strong>. If your symptoms
+      <h3>
+      🙆 Please <strong>self-isolate for 14 days</strong>. If your symptoms
         worsen, please check back in.
-      </p>
+      </h3>
       <p>
         Because you have (or had) symptoms, you should 
         <a

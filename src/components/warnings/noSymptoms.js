@@ -3,10 +3,10 @@ import React from "react"
 export const NoSymptoms = () => (
   <div key="noSymptoms" className="card">
     <div className="card__info">
-      <p>
-        Since you don’t have any COVID-19 symptoms, you don’t need to be tested
+      <h3>
+      ✅ Since you don’t have any COVID-19 symptoms, you don’t need to be tested
         for COVID-19.
-      </p>
+      </h3>
       <p>
         <strong>
           Please self-monitor, wash your hands frequently, and practice physical
@@ -30,14 +30,14 @@ export const NoSymptoms = () => (
       <p>
         If you are experiencing symptoms other than COVID-19, contact your
         family physician. If you are unable to reach your regular health care
-        provider, call 877-WELL to speak with a health representative.
+        provider, call <strong><a href='tel'>877-9355</a> (WELL)</strong> to speak with a health representative.
       </p>
 
       <p>
         For Global News The World Health Organization has created a phone
         service to provide <strong>non-medical</strong> information about
         COVID-19. Information is available via text message or Whatsapp or at 
-        <strong>+41 79 893 18 92.</strong>
+        <strong><a href='tel'>+41 79 893 18 92</a>.</strong>
       </p>
     </div>
   </div>
