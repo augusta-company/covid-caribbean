@@ -6,11 +6,15 @@ export const LightWarning = (dispatch, index, items) => (
     <div className="card">
       <div className="card__info">
         <p>
-          Please stay at home. As a precaution, the Ministry of Health is
-          asking anyone with symptoms (fever, cough, sneezing, or sore throat)
-          to stay home for 10 days. If your symptoms worsen, call your family
-          physician. If you are unable to reach your regular health care
-          provider, call 877-WELL to speak with a health representative.
+          <strong>Please stay at home</strong>. As a precaution, the Ministry of
+          Health is asking <strong>anyone with symptoms</strong> (fever, cough,
+          sneezing, or sore throat){" "}
+          <strong>
+            to stay home for 10 days. If your symptoms worsen, call your family
+            physician
+          </strong>
+          . If you are unable to reach your regular health care provider, call
+          877-WELL to speak with a health representative.
         </p>
         <p>
           <strong>Your self-assessment is not complete.</strong> Finish the
