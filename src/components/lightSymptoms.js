@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Button } from "./button"
 
 export const LightSymptomps = (dispatch, index, items) => (
@@ -13,8 +13,8 @@ export const LightSymptomps = (dispatch, index, items) => (
 
     <div>
       <Button
-        selected={items[index]?.flag === "LightSymptomps"}
-        onClick={() => dispatch({ type: "LightSymptomps", index })}
+        selected={items[index]?.flag === "TravelOutside"}
+        onClick={() => dispatch({ type: "TravelOutside", index })}
       >
         No
       </Button>

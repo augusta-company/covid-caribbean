@@ -18,7 +18,10 @@ export const LightWarning = (dispatch, index, items) => (
       </p>
     </div>
     <div key="travelOutside" className="card">
-      <p>Did you develop symptoms within 14 days of travel outside Canada?</p>
+      <p>
+        Did you develop symptoms within 14 days of travel outside of Trininad
+        and Tobago?
+      </p>
       <div>
         <Button
           selected={items[index]?.flag === "ProvideCare"}

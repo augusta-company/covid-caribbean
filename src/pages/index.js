@@ -8,11 +8,16 @@ import { Button } from "../components/button"
 import { LightSymptomps } from "../components/lightSymptoms"
 import { MildSymptomps } from "../components/mildSymptoms"
 import { ProvideCare } from "../components/provideCare"
+import { CloseContact } from "../components/closeContact"
+import { TravelOutside } from "../components/travelOutside"
 import {
   UrgentWarning,
   MediumWarning,
   LightWarning,
   Isolate10Warning,
+  Isolate14Warning,
+  SelfMonitor,
+  NoSymptoms,
 } from "../components/warnings"
 import CoatWithName from "../svgs/coat-with-name.svg"
 import "../styles.css"
@@ -21,7 +26,7 @@ const replaceItems = (array, index, obj) => {
   return [...array.slice(0, index), obj]
 }
 
-const initalState = { items: [] }
+const initalState = { items: [], symptoms: false }
 
 function reducer(state, action) {
   switch (action.type) {
@@ -31,6 +36,7 @@ function reducer(state, action) {
           flag: action.type,
           cmp: UrgentWarning,
         }),
+        symptoms: state.symptoms,
       }
     case "MediumWarning":
       return {
@@ -38,6 +44,7 @@ function reducer(state, action) {
           flag: action.type,
           cmp: MediumWarning,
         }),
+        symptoms: state.symptoms,
       }
     case "LightWarning":
       return {
@@ -45,6 +52,7 @@ function reducer(state, action) {
           flag: action.type,
           cmp: LightWarning,
         }),
+        symptoms: true,
       }
     case "MildSymptomps":
       return {
@@ -52,6 +60,7 @@ function reducer(state, action) {
           flag: action.type,
           cmp: MildSymptomps,
         }),
+        symptoms: state.symptoms,
       }
     case "LightSymptomps":
       return {
@@ -59,20 +68,67 @@ function reducer(state, action) {
           flag: action.type,
           cmp: LightSymptomps,
         }),
+        symptoms: state.symptoms,
       }
     case "ProvideCare":
       return {
         items: replaceItems(state.items, action.index, {
           flag: action.type,
           cmp: ProvideCare,
+          yes: action.yes || undefined,
         }),
+        symptoms: state.symptoms,
+      }
+    case "TravelOutside":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: TravelOutside,
+        }),
+        symptoms: false,
+      }
+    case "CloseContact":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: CloseContact,
+          symptoms: action.symptoms,
+        }),
+        symptoms: state.symptoms,
       }
     case "Isolate10Warning":
+    case "Isolate10Warning-yes":
+    case "Isolate10Warning-no":
       return {
         items: replaceItems(state.items, action.index, {
           flag: action.type,
           cmp: Isolate10Warning,
         }),
+        symptoms: state.symptoms,
+      }
+    case "Isolate14Warning":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: Isolate14Warning,
+        }),
+        symptoms: state.symptoms,
+      }
+    case "SelfMonitor":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: SelfMonitor,
+        }),
+        symptoms: state.symptoms,
+      }
+    case "NoSymptoms":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: NoSymptoms,
+        }),
+        symptoms: state.symptoms,
       }
     default:
       return { items: replaceItems([...state.items]) }
@@ -151,6 +207,7 @@ const IndexPage = () => {
           <a
             href="http://www.health.gov.tt/images_cms/2020/CoronaVirus/Posters/Quarantine01.jpg"
             target="_blank"
+            rel="noopener noreferrer"
           >
             self-isolate
           </a>{" "}
@@ -164,17 +221,23 @@ const IndexPage = () => {
           <a
             href="https://www.facebook.com/MinistryofHealthTT/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Facebook
           </a>
           ,{" "}
-          <a href="https://twitter.com/MOH_TT" target="_blank">
+          <a
+            href="https://twitter.com/MOH_TT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Twitter
           </a>
           ,{" "}
           <a
             href="https://www.health.gov.tt/sitepages/default.aspx?id=292"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Website
           </a>
@@ -187,6 +250,7 @@ const IndexPage = () => {
           <a
             href="http://www.health.gov.tt/sitepages/default.aspx?id=292"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Trinidad and Tobago’s COVID-19 Support and Information
           </a>
@@ -222,7 +286,7 @@ const IndexPage = () => {
         </div>
       </div>
       {state.items.map((item, index) =>
-        item.cmp(dispatch, index + 1, state.items)
+        item.cmp(dispatch, index + 1, state.items, state.symptoms)
       )}
       <p>
         For Global News The World Health Organization has created a phone
