@@ -6,9 +6,9 @@ export const CloseContact = (dispatch, index, items, symptoms) => {
     <div key="closeContact" className="card">
       <div className="card__info">
         <p>
-          Did you have close contact with a person who travelled outside of
-          Trinidad and tobago in the last 14 days who has become ill (cough,
-          fever, sneezing, or sore throat)?
+          Did you have <strong>close contact</strong> with a person who
+          travelled outside of Trinidad and tobago in the last 14 days who has
+          become ill (cough, fever, sneezing, or sore throat)?
         </p>
       </div>
 
