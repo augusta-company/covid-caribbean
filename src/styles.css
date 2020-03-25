@@ -3,9 +3,14 @@
   font-size: 1.8rem;
 }
 
+.questionnaire {
+  margin-top: 20px;
+  width: 100%;
+}
+
 .card {
   background-color: #f5f5f5;
-  margin: 20px 0;
+  margin-bottom: 20px;
   border: 1px solid #e4e4e4;
   border-radius: 3px;
   align-self: stretch;
