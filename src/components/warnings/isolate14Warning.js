@@ -4,7 +4,7 @@ export const Isolate14Warning = () => (
   <div key="isolate14" className="card">
     <div className="card__info">
       <h3>
-      🙆 <strong>Please self-isolate for 14 days</strong>. You do not need
+        🙆 <strong>Please self-isolate for 14 days</strong>. You do not need
         testing for COVID-19.
       </h3>
       <p>
@@ -32,14 +32,18 @@ export const Isolate14Warning = () => (
       <p>
         If you are experiencing symptoms other than COVID-19, contact your
         family physician. If you are unable to reach your regular health care
-        provider, call <strong><a href='tel'>877-9355</a> (WELL)</strong> to speak with a health representative.
+        provider, call{" "}
+        <strong>
+          <a href="https://wa.me/41798931892">+41 79 893 18 92</a> (WELL)
+        </strong>{" "}
+        to speak with a health representative.
       </p>
 
       <p>
         For Global News The World Health Organization has created a phone
         service to provide <strong>non-medical</strong> information about
         COVID-19. Information is available via text message or Whatsapp or at 
-        <strong><a href='tel'>+41 79 893 18 92</a>.</strong>
+        <strong>+41 79 893 18 92.</strong>
       </p>
     </div>
   </div>
