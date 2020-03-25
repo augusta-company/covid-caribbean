@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Covid 19 assessment`,
+    title: `COVID 19 Assessment`,
     description: `Find out if you need to be tested for covid-19 or not in Trinidad and Tobago.`,
     author: `@gatsbyjs`,
   },
@@ -59,5 +59,11 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || "none",
+      }
+    }
   ],
 }
