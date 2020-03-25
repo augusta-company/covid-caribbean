@@ -33,10 +33,10 @@ const IndexPage = () => {
         Trinidad and Tobago COVID-19 Symptom Self-Assessment Tool
       </h1>
       <a
-        href="https://augusta-health.webflow.io/"
+        href="https://health.augusta.company/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ margin: `60px 0` }}
+        style={{ margin: `20px 0` }}
       >
         <div>
           <Augusta></Augusta>
@@ -57,7 +57,7 @@ const IndexPage = () => {
           Most people do not need to be tested for COVID-19 because it will not
           change your care.
         </p>
-        <p>People who do not need to be tested for COVID-19 include:</p>
+        <p><strong>People who do not need to be tested for COVID-19 include:</strong></p>
         <ul>
           <li>People without symptoms</li>
           <li>
@@ -66,7 +66,7 @@ const IndexPage = () => {
           </li>
           <li>Returning travellers</li>
         </ul>
-        <p>Who should be tested for COVID-19?</p>
+        <p><strong>Who should be tested for COVID-19?</strong></p>
         <p>
           People with respiratory symptoms who may require testing for COVID-19
           include people who are:
@@ -78,7 +78,6 @@ const IndexPage = () => {
           <li>Part of an investigation of a cluster or outbreak</li>
         </ul>
 
-        <p>Last updated: {data.currentBuildDate.currentDate}</p>
         <p>
           Anyone who has symptoms - including a fever, cough, sneezing, or sore
           throat - should 
@@ -89,14 +88,20 @@ const IndexPage = () => {
           >
             self-isolate
           </a>{" "}
-          for 10 days. Continue to complete this assessment to determine if you
+          for 14 days. Continue to complete this assessment to determine if you
           may need care.
         </p>
+
+        <p>Last updated: {data.currentBuildDate.currentDate}</p>
         <div className="card">
           <div className="card__info">
             <p>
-              For questions of concerns, the Trinidad and Tobago Ministry of
-              Health has a COVID-19 Hotline: 877-WELL, social media (
+              For questions of concerns, the Trinidad and Tobago Ministry of Health 
+              has a COVID-19 Hotline: <strong><a href='tel'>877-9355</a> (877-WELL)</strong>, and 
+              the South-West Regional Health Authority COVID-19 Hotline: <strong><a href='tel'>877-9724</a> (87-SWRHA)</strong>
+            </p>
+            <p>
+              Social Media Available as well: (
               <a
                 href="https://www.facebook.com/MinistryofHealthTT/"
                 target="_blank"
@@ -152,6 +157,7 @@ const IndexPage = () => {
               <li>Having a very hard time waking up</li>
               <li>Feeling confused</li>
               <li>Losing consciousness</li>
+              <li>Running a fever</li>
             </ul>
           </div>
           <div className="btn_container">

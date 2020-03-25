@@ -5,16 +5,19 @@ export const LightWarning = (dispatch, index, items) => (
   <div key="lightWarning">
     <div className="card">
       <div className="card__info">
+        <h3>
+        🏠 <strong>Please stay at home</strong>. 
+        </h3>
         <p>
-          <strong>Please stay at home</strong>. As a precaution, the Ministry of
+          As a precaution, the Ministry of
           Health is asking <strong>anyone with symptoms</strong> (fever, cough,
           sneezing, or sore throat){" "}
           <strong>
-            to stay home for 10 days. If your symptoms worsen, call your family
+            to stay home for 14 days. If your symptoms worsen, call your family
             physician
           </strong>
           . If you are unable to reach your regular health care provider, call
-          877-WELL to speak with a health representative.
+          <a href='tel'>877-9355</a> (WELL) to speak with a health representative.
         </p>
         <p>
           <strong>Your self-assessment is not complete.</strong> Finish the
@@ -26,7 +29,7 @@ export const LightWarning = (dispatch, index, items) => (
     <div key="travelOutside" className="card">
       <div className="card__info">
         <p>
-          Did you develop symptoms within 14 days of travel outside of Trininad
+          Did you develop symptoms within 14 days of travel outside of Trinidad
           and Tobago?
         </p>
       </div>
