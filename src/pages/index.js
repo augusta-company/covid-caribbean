@@ -57,7 +57,11 @@ const IndexPage = () => {
           Most people do not need to be tested for COVID-19 because it will not
           change your care.
         </p>
-        <p><strong>People who do not need to be tested for COVID-19 include:</strong></p>
+        <p>
+          <strong>
+            People who do not need to be tested for COVID-19 include:
+          </strong>
+        </p>
         <ul>
           <li>People without symptoms</li>
           <li>
@@ -66,7 +70,9 @@ const IndexPage = () => {
           </li>
           <li>Returning travellers</li>
         </ul>
-        <p><strong>Who should be tested for COVID-19?</strong></p>
+        <p>
+          <strong>Who should be tested for COVID-19?</strong>
+        </p>
         <p>
           People with respiratory symptoms who may require testing for COVID-19
           include people who are:
@@ -101,6 +107,17 @@ const IndexPage = () => {
               COVID-19 National Hotline - <strong><a href='tel'>877-9355</a> (877-WELL)</strong><br/>
               Southwest Region - <strong><a href='tel'>877-9724</a> (87-SWRHA)</strong><br/>
               Tobago - <strong><a href='tel'>800-4325</a> (800-HEAL)</strong>
+            </p>
+            <p>
+              For questions of concerns, the Trinidad and Tobago Ministry of
+              Health has a COVID-19 Hotline:{" "}
+              <strong>
+                <a href="tel:877-9355">877-9355</a> (877-WELL)
+              </strong>
+              , and the South-West Regional Health Authority COVID-19 Hotline:{" "}
+              <strong>
+                <a href="tel:877-9724">877-9724</a> (87-SWRHA)
+              </strong>
             </p>
             <p>
               Social Media<br/>
