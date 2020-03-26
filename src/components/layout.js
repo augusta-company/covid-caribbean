@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
       </div>
-      <footer>© {new Date().getFullYear()} Augusta</footer>
+      <footer style={{marginTop: '75px'}}>© {new Date().getFullYear()} Augusta</footer>
     </>
   )
 }

@@ -26,7 +26,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="coat-container">
+      <div className="coat-container" style={{margin: '50px 0'}}>
         <CoatWithName />
       </div>
       <h1 className="title">
