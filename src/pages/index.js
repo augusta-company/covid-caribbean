@@ -102,6 +102,13 @@ const IndexPage = () => {
         <div className="card">
           <div className="card__info">
             <p>
+              The Trinidad and Tobago Ministry of Health has implemented hotlines for questions and concerns.
+              These hotlines are staffed by a team of medical professionals and are available 24/7.<br/>
+              COVID-19 National Hotline - <strong><a href='tel'>877-9355</a> (877-WELL)</strong><br/>
+              Southwest Region - <strong><a href='tel'>877-9724</a> (87-SWRHA)</strong><br/>
+              Tobago - <strong><a href='tel'>800-4325</a> (800-HEAL)</strong>
+            </p>
+            <p>
               For questions of concerns, the Trinidad and Tobago Ministry of
               Health has a COVID-19 Hotline:{" "}
               <strong>
@@ -113,23 +120,23 @@ const IndexPage = () => {
               </strong>
             </p>
             <p>
-              Social Media Available as well: (
+              Social Media<br/>
               <a
                 href="https://www.facebook.com/MinistryofHealthTT/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Facebook
-              </a>
-              ,{" "}
+              </a><br/>
+              {" "}
               <a
                 href="https://twitter.com/MOH_TT"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Twitter
-              </a>
-              ,{" "}
+              </a><br/>
+              {" "}
               <a
                 href="https://www.health.gov.tt/sitepages/default.aspx?id=292"
                 target="_blank"
@@ -137,7 +144,6 @@ const IndexPage = () => {
               >
                 Website
               </a>
-              )
             </p>
 
             <p>
