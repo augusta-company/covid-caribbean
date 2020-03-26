@@ -1,5 +1,6 @@
 import React from "react"
 import { Button } from "./button"
+import { Tooltip } from "./tooltip"
 
 export const TravelOutside = (dispatch, index, items) => {
   return (
@@ -7,7 +8,11 @@ export const TravelOutside = (dispatch, index, items) => {
       <div className="card__info">
         <p>
           Have you travelled to any countries outside Trinidad and Tobago
-          (including Venezuela) within the last 14 days?
+          (including Venezuela) within the last 14 days?{" "}
+          <Tooltip
+            text="?"
+            tooltipText="Travel includes passing through an airport"
+          />
         </p>
       </div>
 
