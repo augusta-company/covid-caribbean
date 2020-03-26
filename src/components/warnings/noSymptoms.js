@@ -4,8 +4,11 @@ export const NoSymptoms = () => (
   <div key="noSymptoms" className="card">
     <div className="card__info">
       <h3>
-        ✅ Since you don’t have any COVID-19 symptoms, you don’t need to be
-        tested for COVID-19.
+        <span role="img" aria-label="check">
+          ✅
+        </span>{" "}
+        Since you don’t have any COVID-19 symptoms, you don’t need to be tested
+        for COVID-19.
       </h3>
       <p>
         <strong>

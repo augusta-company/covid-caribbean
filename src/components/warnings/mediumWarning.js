@@ -4,8 +4,15 @@ export const MediumWarning = () => (
   <div key="mediumWarning" className="card">
     <div className="card__info">
       <p>
-      🧑🏿‍⚕️<strong>Please consult your family doctor.</strong> If you are unable to
-        reach your regular health care provider, call <strong><a href='tel'>877-9355</a> (877-WELL)</strong>.
+        <span role="img" aria-label="doctor-health">
+          🧑🏿‍⚕️
+        </span>{" "}
+        <strong>Please consult your family doctor.</strong> If you are unable to
+        reach your regular health care provider, call{" "}
+        <strong>
+          <a href="tel">877-9355</a> (877-WELL)
+        </strong>
+        .
       </p>
       <p>
         Someone can speak with you about your symptoms and provide health

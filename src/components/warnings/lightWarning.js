@@ -6,7 +6,10 @@ export const LightWarning = (dispatch, index, items) => (
     <div className="card">
       <div className="card__info">
         <h3>
-          🏠 <strong>Please stay at home</strong>. 
+          <span role="img" aria-label="home">
+            🏠
+          </span>{" "}
+          <strong>Please stay at home</strong>. 
         </h3>
         <p>
           As a precaution, the Ministry of Health is asking 

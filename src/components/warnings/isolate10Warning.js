@@ -4,7 +4,10 @@ export const Isolate10Warning = () => (
   <div key="isolate10" className="card">
     <div className="card__info">
       <h3>
-        🙆 Please <strong>self-isolate for 14 days</strong>. If your symptoms
+        <span role="img" aria-label="attention">
+          🙆
+        </span>{" "}
+        Please <strong>self-isolate for 14 days</strong>. If your symptoms
         worsen, please check back in.
       </h3>
       <p>
