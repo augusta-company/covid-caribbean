@@ -12,21 +12,18 @@ export const LightWarning = (dispatch, index, items) => (
           <strong>Please stay at home</strong>. 
         </h3>
         <p>
-          As a precaution, the Ministry of Health is asking 
-          <strong>anyone with symptoms</strong> (fever, cough, sneezing, or sore
-          throat){" "}
-          <strong>
-            to stay home for 14 days. If your symptoms worsen, call your family
-            physician
-          </strong>
-          . If you are unable to reach your regular health care provider, call
-          <a href="tel:877-9355">877-9355</a> (WELL) to speak with a health
-          representative.
+          Please stay at home. As a precaution, the Ministry of Health is asking 
+          anyone with mild symptoms (fever, cough, sneezing or sore throat) 
+          to stay home. Please contact the hotline below, and a medical professional 
+          will advise you regarding isolation and notice to employers.<br/><br/>
+          COVID-19 National Hotline - <a href="tel:877-9355">877-9355</a> (877-WELL)<br/>
+          Southwest Region - <a href="tel:877-9724">877-9724</a> (87-SWRHA)<br/>
+          Tobago - <a href="tel:800-4325">800-4325</a> (800-HEAL)<br/>
         </p>
         <p>
-          <strong>Your self-assessment is not complete.</strong> Finish the
+          <strong>Your self-assessment is not complete. Finish the
           remaining questions to obtain complete recommendations on what steps
-          you should take.
+          you should take.</strong>
         </p>
       </div>
     </div>
