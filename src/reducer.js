@@ -3,9 +3,11 @@ import { MildSymptomps } from "./components/mildSymptoms"
 import { ProvideCare } from "./components/provideCare"
 import { CloseContact } from "./components/closeContact"
 import { TravelOutside } from "./components/travelOutside"
+import { MentalHealth } from "./components/mentalHealth"
 import {
   UrgentWarning,
   MediumWarning,
+  MentalWarning,
   LightWarning,
   Isolate10Warning,
   Isolate14Warning,
@@ -116,6 +118,22 @@ export default function(state, action) {
         items: replaceItems(state.items, action.index, {
           flag: action.type,
           cmp: NoSymptoms,
+        }),
+        symptoms: state.symptoms,
+      }
+    case "MentalHealth":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: MentalHealth,
+        }),
+        symptoms: state.symptoms,
+      }
+    case "MentalWarning":
+      return {
+        items: replaceItems(state.items, action.index, {
+          flag: action.type,
+          cmp: MentalWarning,
         }),
         symptoms: state.symptoms,
       }

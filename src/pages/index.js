@@ -168,8 +168,8 @@ const IndexPage = () => {
             <p>Are you experiencing any of the following:</p>
             <ul>
               <li>
-                Severe difficulty breathing (e.g. struggling to breathe or
-                speaking in single words)
+                Severe difficulty breathing 
+                (e.g. struggling to breathe or speaking in single words)
               </li>
               <li>Severe chest pain</li>
               <li>Having a very hard time waking up</li>
