@@ -7,21 +7,19 @@ export const Isolate10Warning = () => (
         <span role="img" aria-label="attention">
           🙆
         </span>{" "}
-        Please <strong>self-isolate for 14 days</strong>. If your symptoms
-        worsen, please check back in.
+        Please <strong>stay at home</strong>, and please consult one of the below 
+        hotlines:
       </h3>
       <p>
-        Because you have (or had) symptoms, you should 
-        <a
-          href="http://www.health.gov.tt/images_cms/2020/CoronaVirus/Posters/Quarantine01.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          self-isolate
-        </a>{" "}
-        <strong>for 10 days</strong>. That means not going to any public places,
-        staying at home, and not having any visitors. Don’t share personal items
-        like dishes, utensils, or towels, and wash your hands often.
+        COVID-19 National Hotline - <a href="tel:877-9355">877-9355</a> (877-WELL)<br/>
+        Southwest Region - <a href="tel:877-9724">877-9724</a> (87-SWRHA)<br/>
+        Tobago - <a href="tel:800-4325">800-4325</a> (800-HEAL)
+      </p>
+      <p>
+        If your symptoms worsen, please check back in.<br/>
+        Because you have (or had) symptoms, you should self-isolate. That means 
+        no going to any public places, staying at home, and not having any visitors. Don't 
+        share personal items like dishes, utensils, or towels, and wash your hands often.
       </p>
       <p>
         <strong>
@@ -46,8 +44,7 @@ export const Isolate10Warning = () => (
       </p>
       <p>
         If your symptoms worsen, or if you are concerned, you can return to this
-        self-assessment at any time; or, call{" "}
-        <a href="tel:877-9355">877-9355</a> (WELL).
+        self-assessment at any time.
       </p>
 
       <p>
