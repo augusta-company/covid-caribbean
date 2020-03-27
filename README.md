@@ -1,48 +1,54 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
+  <img alt="Health" src="src/images/health.png" width="60" />
 </p>
+
 <h1 align="center">
-  Gatsby's default starter
+  COVID CARIBBEAN
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+<p align="center">
+  <a href="https://github.com/gatsbyjs/gatsby/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Gatsby is released under the MIT license." />
+  </a>
+  <a href="https://www.npmjs.org/package/gatsby">
+    <img src="https://img.shields.io/npm/v/gatsby.svg" alt="Current npm package version." />
+  </a>
+  <a href="https://gatsbyjs.org/contributing/how-to-contribute/">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  </a>
+</p>
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+<h2>Table of Contents</h2>
 
-## 🚀 Quick start
+1. Installation and Usage
+2. What's Inside
+3. Code of Conduct
+4. Contributing
+5. Style Guides
+6. License
 
-1.  **Create a Gatsby site.**
+<h3> 🚀 Installation and Usage</h3>
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+- Start developing.
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+  * Clone the repo.
+  * Navigate into your new site’s directory and start it up.
 
-1.  **Start developing.**
+  ```shell
+  cd my-default-starter/
 
-    Navigate into your new site’s directory and start it up.
+  gatsby develop
+  ```
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+- Open the source code and start editing!
 
-1.  **Open the source code and start editing!**
+  * Your site is now running at `http://localhost:8000`
+  * Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-    Your site is now running at `http://localhost:8000`!
+<h3> 🧐 What's inside?</h3>
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you'll see within the
+project directory.
 
     .
     ├── node_modules
@@ -58,42 +64,26 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── package.json
     └── README.md
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+<h3>Code of Conduct</h3>
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+By contributing to this project, you agree to abide by our
+[code of conduct](Conduct.md)
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+<h3>Contributing</h3>
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+- Reach out to Augusta Health team if you're interested in contributing.
+- Once approved you will be added as a contributor.
+- Clone the repo and create a new branch locally, on which to make changes.
+- View the [issues]() page to see the most pressing needs.
+- To have your changes reviewed, open a new pull request and the Augusta team will review the
+changes. Be sure to reference the original issue in your pull request.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+<h3>Style Guides</h3>
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+- Write in UTF-8 in JavaScript.
+- Always use 2 spaces for indentation (don't use tabs).
+- Look at the existing style and adhere accordingly.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+<h3>License</h3>
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+Licensed under the [MIT License](./LICENSE).
