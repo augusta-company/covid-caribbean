@@ -35,7 +35,7 @@ export const NoSymptoms = () => (
         family physician. If you are unable to reach your regular health care
         provider, call{" "}
         <strong>
-          <a href="tel">877-9355</a> (WELL)
+          <a href="tel:877-9355">877-9355</a> (WELL)
         </strong>{" "}
         to speak with a health representative.
       </p>

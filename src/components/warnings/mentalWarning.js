@@ -10,39 +10,39 @@ export const MentalWarning = () => (
       </p>
       <p>
         <strong>EAST</strong><br/>
-        Raymond - <strong>732-2702</strong><br/>
-        Laura - <strong>474-2737</strong><br/>
-        Margaret - <strong>342-1578</strong><br/>
-        Greisy - <strong>769-8094</strong><br/>
+        Raymond - <a href="tel:732-2702">732-2702</a><br/>
+        Laura - <a href="tel:474-2737">474-2737</a><br/>
+        Margaret - <a href="tel:342-1578">342-1578</a><br/>
+        Greisy - <a href="tel:769-8094">769-8094</a><br/>
       </p>
       <p>
         <strong>WEST</strong><br/>
-        Wendy - <strong>787-0975</strong><br/>
-        Sally - <strong>730-7639</strong><br/>
-        Michelle - <strong>469-9983</strong><br/>
-        Patricia - <strong>386-2815</strong><br/>
+        Wendy - <a href="tel:787-0975">787-0975</a><br/>
+        Sally - <a href="tel:730-7639">730-7639</a><br/>
+        Michelle - <a href="tel:469-9983">469-9983</a><br/>
+        Patricia - <a href="tel:386-2815">386-2815</a><br/>
       </p>
       <p>
         <strong>CENTRAL</strong><br/>
-        Deborah - <strong>757-9348</strong><br/>
-        Kareen - <strong>731-2386</strong><br/>
-        Jefferson - <strong>689-1243</strong><br/>
-        Luscia - <strong>784-6678</strong><br/>
+        Deborah - <a href="tel:757-9348">757-9348</a><br/>
+        Kareen - <a href="tel:731-2386">731-2386</a><br/>
+        Jefferson - <a href="tel:689-1243">689-1243</a><br/>
+        Luscia - <a href="tel:784-6678">784-6678</a><br/>
       </p>
       <p>
         <strong>SOUTH</strong><br/>
-        J&apos;elle - <strong>727-6723</strong><br/>
-        Leslie-Ann - <strong>754-0170</strong><br/>
-        Arlene - <strong>722-0188</strong><br/>
+        J&apos;elle - <a href="tel:727-6723">727-6723</a><br/>
+        Leslie-Ann - <a href="tel:754-0170">754-0170</a><br/>
+        Arlene - <a href="tel:722-0188<">722-0188</a><br/>
       </p>
       <p>
         <strong>TOBAGO</strong><br/>
-        Stacy - <strong>718-4387</strong><br/>
-        Dionne - <strong>495-1750</strong><br/>
+        Stacy - <a href="tel:718-4387<">718-4387</a><br/>
+        Dionne - <a href="tel:495-1750<">495-1750</a><br/>
       </p>
       <p>
         <strong>SPANISH CALLERS</strong><br/>
-        Greisy - <strong>769-8064</strong><br/>
+        Greisy - <a href="tel:769-8064<">769-8064</a><br/>
       </p>
     </div>
   </div>
