@@ -151,7 +151,8 @@ const IndexPage = () => {
       <div className="questionnaire">
         <div className="card">
           <div className="card__info">
-            <p>Are you experiencing any of the following:</p>
+            <p><strong>Question One</strong></p>
+            <p>Are you experiencing <strong>fever</strong> and any of the following:</p>
             <ul>
               <li>
                 Severe difficulty breathing 
@@ -161,7 +162,6 @@ const IndexPage = () => {
               <li>Having a very hard time waking up</li>
               <li>Feeling confused</li>
               <li>Losing consciousness</li>
-              <li>Running a fever</li>
             </ul>
           </div>
           <div className="btn_container">
