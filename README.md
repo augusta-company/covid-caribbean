@@ -84,7 +84,6 @@ changes. Be sure to reference the original issue in your pull request.
 - Always use 2 spaces for indentation (don't use tabs).
 - Look at the existing style and adhere accordingly.
 
-
-<h3>:memo: License</h3>
+<h3>License</h3>
 
 Licensed under the [MIT License](./LICENSE).
