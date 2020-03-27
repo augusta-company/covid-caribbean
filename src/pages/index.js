@@ -68,20 +68,6 @@ const IndexPage = () => {
             People who have mild respiratory symptoms that can be managed at
             home
           </li>
-          <li>Returning travellers</li>
-        </ul>
-        <p>
-          <strong>Who should be tested for COVID-19?</strong>
-        </p>
-        <p>
-          People with respiratory symptoms who may require testing for COVID-19
-          include people who are:
-        </p>
-        <ul>
-          <li>Hospitalized, or likely to be hospitalized</li>
-          <li>Health Care Workers</li>
-          <li>Residents of long-term care facilities</li>
-          <li>Part of an investigation of a cluster or outbreak</li>
         </ul>
 
         <p>
@@ -94,8 +80,8 @@ const IndexPage = () => {
           >
             self-isolate
           </a>{" "}
-          for 14 days. Continue to complete this assessment to determine if you
-          may need care.
+          and immediately contact the listed hotlines. Continue to complete this assessment 
+          to determine if you may need care.
         </p>
 
         <p>Last updated: {data.currentBuildDate.currentDate}</p>
