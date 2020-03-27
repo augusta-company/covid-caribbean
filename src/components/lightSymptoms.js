@@ -4,7 +4,6 @@ import { Button } from "./button"
 export const LightSymptomps = (dispatch, index, items) => (
   <div key="lightSymptomps" className="card">
     <div className="card__info">
-      <p><strong>Question Three</strong></p>
       <p>Are you experiencing any of the following:</p>
       <ul>
         <li>Fever</li>

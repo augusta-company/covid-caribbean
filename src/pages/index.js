@@ -151,7 +151,6 @@ const IndexPage = () => {
       <div className="questionnaire">
         <div className="card">
           <div className="card__info">
-            <p><strong>Question One</strong></p>
             <p>Are you experiencing <strong>fever</strong> and any of the following:</p>
             <ul>
               <li>

@@ -5,7 +5,6 @@ export const MildSymptomps = (dispatch, index, items) => {
   return (
     <div key="mildSymptomps" className="card">
       <div className="card__info">
-        <p><strong>Question Two</strong></p>
         <p>Are you experiencing any of the following:</p>
         <ul>
           <li>Mild to moderate shortness of breath</li>
