@@ -37,7 +37,7 @@ export const Isolate14Warning = () => (
         family physician. If you are unable to reach your regular health care
         provider, call{" "}
         <strong>
-          <a href="https://wa.me/41798931892">+41 79 893 18 92</a> (WELL)
+          <a href="tel:877-9355">877-9355</a> (WELL)
         </strong>{" "}
         to speak with a health representative.
       </p>
