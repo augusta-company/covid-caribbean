@@ -1,6 +1,7 @@
 .coat-container {
   height: 50px;
-  width: 150px
+  width: 150px;
+  margin: 50px 0;
 }
 
 .title {
