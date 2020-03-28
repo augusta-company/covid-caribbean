@@ -1,9 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery } from "gatsby"
 import { Button } from "./button"
 import { getHtmlforCountry } from "../utils"
 
-export const LightSymptomps = (
+export const EntryQuestion = (
   dispatch,
   index,
   items,
@@ -15,21 +15,21 @@ export const LightSymptomps = (
   const info = getHtmlforCountry(data.allMarkdownRemark.edges, country)
 
   return (
-    <div key="lightSymptomps" className="card">
+    <div key="entryQuestion" className="card">
       <div
         className="card__info"
         dangerouslySetInnerHTML={{ __html: info.node.html }}
       />
       <div className="btn_container">
         <Button
-          selected={items[index]?.flag === "TravelOutside"}
-          onClick={() => dispatch({ type: "TravelOutside", index })}
+          selected={items[0]?.flag === "MildSymptomps"}
+          onClick={() => dispatch({ type: "MildSymptomps", index: 0 })}
         >
           No
         </Button>
         <Button
-          selected={items[index]?.flag === "LightWarning"}
-          onClick={() => dispatch({ type: "LightWarning", index })}
+          selected={items[0]?.flag === "UrgentWarning"}
+          onClick={() => dispatch({ type: "UrgentWarning", index: 0 })}
         >
           Yes
         </Button>
@@ -39,9 +39,9 @@ export const LightSymptomps = (
 }
 
 const GetData = graphql`
-  query {
+  query GetInfo {
     allMarkdownRemark(
-      filter: { frontmatter: { name: { regex: "/lightSymptoms/" } } }
+      filter: { frontmatter: { name: { regex: "/entryQuestion/" } } }
     ) {
       edges {
         node {

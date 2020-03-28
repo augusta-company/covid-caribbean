@@ -66,7 +66,6 @@ export default function(state, action) {
         items: replaceItems(state.items, action.index, {
           flag: action.type,
           cmp: ProvideCare,
-          yes: action.yes || undefined,
         }),
         symptoms: state.symptoms,
       }
@@ -83,7 +82,6 @@ export default function(state, action) {
         items: replaceItems(state.items, action.index, {
           flag: action.type,
           cmp: CloseContact,
-          symptoms: action.symptoms,
         }),
         symptoms: state.symptoms,
       }
