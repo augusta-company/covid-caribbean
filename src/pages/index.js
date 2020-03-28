@@ -128,7 +128,7 @@ const IndexPage = () => {
               >
                 Facebook
               </a>
-              <br />{" "}
+              <br />
               <a
                 href="https://twitter.com/MOH_TT"
                 target="_blank"
@@ -136,7 +136,7 @@ const IndexPage = () => {
               >
                 Twitter
               </a>
-              <br />{" "}
+              <br />
               <a
                 href="https://www.health.gov.tt/sitepages/default.aspx?id=292"
                 target="_blank"

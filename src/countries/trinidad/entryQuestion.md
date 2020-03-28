@@ -4,7 +4,7 @@ name: "entryQuestion"
 country: "trinidad"
 ---
 
-<p>Are you experiencing any of the following:</p>
+<p>Are you experiencing <strong>fever</strong> and any of the following:</p>
 <ul>
   <li>
     Severe difficulty breathing 

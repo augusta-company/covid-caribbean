@@ -9,6 +9,7 @@ const path = require("path")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const introTemplate = path.resolve(`./src/templates/intro.js`)
+  // Query all .md files and get the path value
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -31,7 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log("node", node.frontmatter)
+    // If the md file has a path create a page for it
     if (node.frontmatter.path) {
       createPage({
         path: node.frontmatter.path,
