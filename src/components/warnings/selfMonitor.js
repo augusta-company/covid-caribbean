@@ -37,7 +37,9 @@ export const SelfMonitor = () => (
         For Global News The World Health Organization has created a phone
         service to provide <strong>non-medical</strong> information about
         COVID-19. Information is available via text message or Whatsapp or at 
-        <strong><a href='tel'>+41 79 893 18 92</a>.</strong>
+        <strong>
+          <a href="https://wa.me/41798931892">+41 79 893 18 92</a>.
+        </strong>
       </p>
     </div>
   </div>

@@ -57,25 +57,17 @@ const IndexPage = () => {
           Most people do not need to be tested for COVID-19 because it will not
           change your care.
         </p>
-        <p><strong>People who do not need to be tested for COVID-19 include:</strong></p>
+        <p>
+          <strong>
+            People who do not need to be tested for COVID-19 include:
+          </strong>
+        </p>
         <ul>
           <li>People without symptoms</li>
           <li>
             People who have mild respiratory symptoms that can be managed at
             home
           </li>
-          <li>Returning travellers</li>
-        </ul>
-        <p><strong>Who should be tested for COVID-19?</strong></p>
-        <p>
-          People with respiratory symptoms who may require testing for COVID-19
-          include people who are:
-        </p>
-        <ul>
-          <li>Hospitalized, or likely to be hospitalized</li>
-          <li>Health Care Workers</li>
-          <li>Residents of long-term care facilities</li>
-          <li>Part of an investigation of a cluster or outbreak</li>
         </ul>
 
         <p>
@@ -88,36 +80,49 @@ const IndexPage = () => {
           >
             self-isolate
           </a>{" "}
-          for 14 days. Continue to complete this assessment to determine if you
-          may need care.
+          and immediately contact the listed hotlines. Continue to complete this assessment 
+          to determine if you may need care.
         </p>
 
         <p>Last updated: {data.currentBuildDate.currentDate}</p>
         <div className="card">
           <div className="card__info">
             <p>
-              For questions of concerns, the Trinidad and Tobago Ministry of Health 
-              has a COVID-19 Hotline: <strong><a href='tel'>877-9355</a> (877-WELL)</strong>, and 
-              the South-West Regional Health Authority COVID-19 Hotline: <strong><a href='tel'>877-9724</a> (87-SWRHA)</strong>
+              The Trinidad and Tobago Ministry of Health has implemented hotlines for questions and concerns.
+              These hotlines are staffed by a team of medical professionals and are available 24/7.<br/>
+              COVID-19 National Hotline - <strong><a href='tel:877-9355'>877-9355</a> (877-WELL)</strong><br/>
+              Southwest Region - <strong><a href='tel:877-9724'>877-9724</a> (87-SWRHA)</strong><br/>
+              Tobago - <strong><a href='tel:800-4325'>800-4325</a> (800-HEAL)</strong>
             </p>
             <p>
-              Social Media Available as well: (
+              For questions of concerns, the Trinidad and Tobago Ministry of
+              Health has a COVID-19 Hotline:{" "}
+              <strong>
+                <a href="tel:877-9355">877-9355</a> (877-WELL)
+              </strong>
+              , and the South-West Regional Health Authority COVID-19 Hotline:{" "}
+              <strong>
+                <a href="tel:877-9724">877-9724</a> (87-SWRHA)
+              </strong>
+            </p>
+            <p>
+              Social Media<br/>
               <a
                 href="https://www.facebook.com/MinistryofHealthTT/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Facebook
-              </a>
-              ,{" "}
+              </a><br/>
+              {" "}
               <a
                 href="https://twitter.com/MOH_TT"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Twitter
-              </a>
-              ,{" "}
+              </a><br/>
+              {" "}
               <a
                 href="https://www.health.gov.tt/sitepages/default.aspx?id=292"
                 target="_blank"
@@ -125,7 +130,6 @@ const IndexPage = () => {
               >
                 Website
               </a>
-              )
             </p>
 
             <p>
@@ -147,17 +151,16 @@ const IndexPage = () => {
       <div className="questionnaire">
         <div className="card">
           <div className="card__info">
-            <p>Are you experiencing any of the following:</p>
+            <p>Are you experiencing <strong>fever</strong> and any of the following:</p>
             <ul>
               <li>
-                Severe difficulty breathing (e.g. struggling to breathe or
-                speaking in single words)
+                Severe difficulty breathing 
+                (e.g. struggling to breathe or speaking in single words)
               </li>
               <li>Severe chest pain</li>
               <li>Having a very hard time waking up</li>
               <li>Feeling confused</li>
               <li>Losing consciousness</li>
-              <li>Running a fever</li>
             </ul>
           </div>
           <div className="btn_container">

@@ -1,13 +1,18 @@
 import React from "react"
 import { Button } from "./button"
+import { Tooltip } from "./tooltip"
 
 export const TravelOutside = (dispatch, index, items) => {
   return (
     <div key="travelOutside" className="card">
       <div className="card__info">
         <p>
-          Have you travelled to any countries outside Trinidad and Tobago
-          (including Venezuela) within the last 14 days?
+          Did you travel outside of Trinidad and Tobago 
+          within the last month?{" "}
+          <Tooltip
+            text="?"
+            tooltipText="Travel includes passing through an airport"
+          />
         </p>
       </div>
 
