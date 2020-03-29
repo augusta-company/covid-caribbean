@@ -11,13 +11,6 @@ export const UrgentWarning = () => (
         <strong>You should call 8-1-1 immediately</strong>, or go directly to
         your nearest emergency department.
       </p>
-
-      <p>
-        For global news, The World Health Organization has created a phone
-        service to provide <strong>non-medical</strong> information about
-        COVID-19. Information is available via text message or Whatsapp or at 
-        <strong><a href='tel'>+41 79 893 18 92</a>.</strong>
-      </p>
     </div>
   </div>
 )
