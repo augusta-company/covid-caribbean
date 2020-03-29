@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { EntryQuestion } from "../components/entryQuestion"
+import { CountryPicker } from "../components/countryPicker"
 import CoatWithName from "../svgs/coat.svg"
 import Augusta from "../svgs/power-augusta.svg"
 import reducer from "../reducer"
@@ -26,6 +27,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <CountryPicker />
       <div className="coat-container">
         <CoatWithName />
       </div>
