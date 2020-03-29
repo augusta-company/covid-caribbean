@@ -1,5 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import { Button } from "./button"
 import { getHtmlforCountry } from "../utils"
 
@@ -12,14 +14,13 @@ export const LightSymptomps = (
 ) => {
   const data = useStaticQuery(GetData)
 
-  const info = getHtmlforCountry(data.allMarkdownRemark.edges, country)
+  const info = getHtmlforCountry(data.allMdx.edges, country)
 
   return (
     <div key="lightSymptomps" className="card">
-      <div
-        className="card__info"
-        dangerouslySetInnerHTML={{ __html: info.node.html }}
-      />
+      <div className="card__info">
+        <MDXRenderer>{info.node.body}</MDXRenderer>
+      </div>
       <div className="btn_container">
         <Button
           selected={items[index]?.flag === "TravelOutside"}
@@ -40,12 +41,10 @@ export const LightSymptomps = (
 
 const GetData = graphql`
   query {
-    allMarkdownRemark(
-      filter: { frontmatter: { name: { regex: "/lightSymptoms/" } } }
-    ) {
+    allMdx(filter: { frontmatter: { name: { regex: "/lightSymptoms/" } } }) {
       edges {
         node {
-          html
+          body
           frontmatter {
             type
             name

@@ -1,14 +1,24 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
+import { getHtmlforCountry } from "../utils"
 import { Button } from "./button"
 
-export const MentalHealth = (dispatch, index, items, symptoms) => {
+export const MentalHealth = (
+  dispatch,
+  index,
+  items,
+  symptoms,
+  country = "trinidad"
+) => {
+  const data = useStaticQuery(GetData)
+
+  const info = getHtmlforCountry(data.allMdx.edges, country)
   return (
     <div key="mentalHealth" className="card">
       <div className="card__info">
-        <p>
-        Are you experiencing persistent and overwhelming emotions 
-        related to the COVID outbreak in Trinidad and Tobago?
-        </p>
+        <MDXRenderer>{info.node.body}</MDXRenderer>
       </div>
 
       <div className="btn_container">
@@ -46,3 +56,20 @@ export const MentalHealth = (dispatch, index, items, symptoms) => {
     </div>
   )
 }
+
+const GetData = graphql`
+  query {
+    allMdx(filter: { frontmatter: { name: { regex: "/mentalHealth/" } } }) {
+      edges {
+        node {
+          body
+          frontmatter {
+            type
+            name
+            country
+          }
+        }
+      }
+    }
+  }
+`

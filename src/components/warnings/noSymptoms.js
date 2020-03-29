@@ -4,7 +4,7 @@ export const NoSymptoms = () => (
   <div key="noSymptoms" className="card">
     <div className="card__info">
       <h3>
-        <span role="img" aria-label="doctor-health">
+        <span role="img" aria-label="green-check">
           ✅
         </span>{" "}
         Please stay at home. You do not need testing for COVID-19.

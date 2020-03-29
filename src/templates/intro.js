@@ -1,37 +1,25 @@
 import React, { useReducer } from "react"
+import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { EntryQuestion } from "../components/entryQuestion"
-import CoatWithName from "../svgs/coat.svg"
-import Augusta from "../svgs/power-augusta.svg"
 import reducer from "../reducer"
 import "../styles.css"
-import { graphql } from "gatsby"
 
 const initalState = { items: [], symptoms: false }
 
-export default function Template({ data }) {
-  const { markdownRemark: info } = data
+export default function Template({ data, pageContext }) {
+  const { mdx: info } = data
   const [state, dispatch] = useReducer(reducer, initalState)
 
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="coat-container">
-        <CoatWithName />
-      </div>
-      <h1 className="title">{info.frontmatter.title}</h1>
-      <a
-        href="https://health.augusta.company/"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ margin: `20px 0` }}
-      >
-        <div>
-          <Augusta></Augusta>
-        </div>
-      </a>
-      <div dangerouslySetInnerHTML={{ __html: info.html }} />
+      <MDXRenderer title={pageContext.frontmatter.title}>
+        {info.body}
+      </MDXRenderer>
       <div className="questionnaire">
         {EntryQuestion(
           dispatch,
@@ -55,8 +43,8 @@ export default function Template({ data }) {
 }
 export const pageQuery = graphql`
   query Intro($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+    mdx(frontmatter: { path: { eq: $path } }) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

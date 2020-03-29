@@ -1,19 +1,24 @@
 import React from "react"
-import { Button } from "./button"
-import { Tooltip } from "./tooltip"
+import { useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-export const TravelOutside = (dispatch, index, items) => {
+import { getHtmlforCountry } from "../utils"
+import { Button } from "./button"
+
+export const TravelOutside = (
+  dispatch,
+  index,
+  items,
+  symptoms,
+  country = "trinidad"
+) => {
+  const data = useStaticQuery(GetData)
+
+  const info = getHtmlforCountry(data.allMdx.edges, country)
   return (
     <div key="travelOutside" className="card">
       <div className="card__info">
-        <p>
-          Did you travel outside of Trinidad and Tobago 
-          within the last month?{" "}
-          <Tooltip
-            text="?"
-            tooltipText="Travel includes passing through an airport"
-          />
-        </p>
+        <MDXRenderer>{info.node.body}</MDXRenderer>
       </div>
 
       <div className="btn_container">
@@ -38,3 +43,20 @@ export const TravelOutside = (dispatch, index, items) => {
     </div>
   )
 }
+
+const GetData = graphql`
+  query {
+    allMdx(filter: { frontmatter: { name: { regex: "/travelOutside/" } } }) {
+      edges {
+        node {
+          body
+          frontmatter {
+            type
+            name
+            country
+          }
+        }
+      }
+    }
+  }
+`

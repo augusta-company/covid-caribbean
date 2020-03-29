@@ -12,14 +12,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Query all .md files and get the path value
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
           node {
             frontmatter {
               path
+              title
             }
           }
         }
@@ -31,13 +29,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMdx.edges.forEach(({ node }) => {
     // If the md file has a path create a page for it
     if (node.frontmatter.path) {
       createPage({
         path: node.frontmatter.path,
         component: introTemplate,
-        context: {},
+        context: { frontmatter: { ...node.frontmatter } },
       })
     }
   })
