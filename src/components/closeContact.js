@@ -1,15 +1,25 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
+import { getHtmlforCountry } from "../utils"
 import { Button } from "./button"
 
-export const CloseContact = (dispatch, index, items, symptoms) => {
+export const CloseContact = (
+  dispatch,
+  index,
+  items,
+  symptoms,
+  country = "trinindad"
+) => {
+  const data = useStaticQuery(GetData)
+
+  const info = getHtmlforCountry(data.allMdx.edges, country)
+
   return (
     <div key="closeContact" className="card">
       <div className="card__info">
-        <p>
-          Did you have <strong>close contact</strong> with a person who
-          travelled outside of Trinidad and tobago in the last 14 days who has
-          become ill (cough, fever, sneezing, or sore throat)?
-        </p>
+        <MDXRenderer>{info.node.body}</MDXRenderer>
       </div>
 
       <div className="btn_container">
@@ -47,3 +57,20 @@ export const CloseContact = (dispatch, index, items, symptoms) => {
     </div>
   )
 }
+
+const GetData = graphql`
+  query {
+    allMdx(filter: { frontmatter: { name: { regex: "/closeContact/" } } }) {
+      edges {
+        node {
+          body
+          frontmatter {
+            type
+            name
+            country
+          }
+        }
+      }
+    }
+  }
+`

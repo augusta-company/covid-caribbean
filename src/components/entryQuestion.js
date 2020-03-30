@@ -2,46 +2,35 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import { getHtmlforCountry } from "../utils"
 import { Button } from "./button"
+import { getHtmlforCountry } from "../utils"
 
-export const ProvideCare = (
+export const EntryQuestion = (
   dispatch,
   index,
   items,
   symptoms,
-  country = "trinindad"
+  country = "trinidad"
 ) => {
   const data = useStaticQuery(GetData)
 
   const info = getHtmlforCountry(data.allMdx.edges, country)
+
   return (
-    <div key="provideCare" className="card">
+    <div key="entryQuestion" className="card">
       <div className="card__info">
         <MDXRenderer>{info.node.body}</MDXRenderer>
       </div>
-
       <div className="btn_container">
         <Button
-          selected={items[index]?.flag === "CloseContact"}
-          onClick={() =>
-            dispatch({ type: "CloseContact", index, symptoms: false })
-          }
+          selected={items[0]?.flag === "MildSymptomps"}
+          onClick={() => dispatch({ type: "MildSymptomps", index: 0 })}
         >
           No
         </Button>
         <Button
-          selected={
-            items[index]?.flag === "Isolate10Warning" ||
-            items[index]?.flag === "Isolate14Warning"
-          }
-          onClick={() => {
-            if (symptoms) {
-              dispatch({ type: "Isolate10Warning", index })
-            } else {
-              dispatch({ type: "Isolate14Warning", index })
-            }
-          }}
+          selected={items[0]?.flag === "UrgentWarning"}
+          onClick={() => dispatch({ type: "UrgentWarning", index: 0 })}
         >
           Yes
         </Button>
@@ -51,8 +40,8 @@ export const ProvideCare = (
 }
 
 const GetData = graphql`
-  query {
-    allMdx(filter: { frontmatter: { name: { regex: "/provideCare/" } } }) {
+  query GetInfo {
+    allMdx(filter: { frontmatter: { name: { regex: "/entryQuestion/" } } }) {
       edges {
         node {
           body

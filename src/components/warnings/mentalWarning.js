@@ -1,49 +1,42 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-export const MentalWarning = () => (
-  <div key="mentalWarning" className="card">
-    <div className="card__info">
-      <p>
-      If you are experiencing persistent and overwhelming emotions during the 
-      COVID-19 outbreak in Trinidad and Tobago, please call the TTAP members in 
-      your area on the numbers listed below. The service is free for you!
-      </p>
-      <p>
-        <strong>EAST</strong><br/>
-        Raymond - <a href="tel:732-2702">732-2702</a><br/>
-        Laura - <a href="tel:474-2737">474-2737</a><br/>
-        Margaret - <a href="tel:342-1578">342-1578</a><br/>
-        Greisy - <a href="tel:769-8094">769-8094</a><br/>
-      </p>
-      <p>
-        <strong>WEST</strong><br/>
-        Wendy - <a href="tel:787-0975">787-0975</a><br/>
-        Sally - <a href="tel:730-7639">730-7639</a><br/>
-        Michelle - <a href="tel:469-9983">469-9983</a><br/>
-        Patricia - <a href="tel:386-2815">386-2815</a><br/>
-      </p>
-      <p>
-        <strong>CENTRAL</strong><br/>
-        Deborah - <a href="tel:757-9348">757-9348</a><br/>
-        Kareen - <a href="tel:731-2386">731-2386</a><br/>
-        Jefferson - <a href="tel:689-1243">689-1243</a><br/>
-        Luscia - <a href="tel:784-6678">784-6678</a><br/>
-      </p>
-      <p>
-        <strong>SOUTH</strong><br/>
-        J&apos;elle - <a href="tel:727-6723">727-6723</a><br/>
-        Leslie-Ann - <a href="tel:754-0170">754-0170</a><br/>
-        Arlene - <a href="tel:722-0188<">722-0188</a><br/>
-      </p>
-      <p>
-        <strong>TOBAGO</strong><br/>
-        Stacy - <a href="tel:718-4387<">718-4387</a><br/>
-        Dionne - <a href="tel:495-1750<">495-1750</a><br/>
-      </p>
-      <p>
-        <strong>SPANISH CALLERS</strong><br/>
-        Greisy - <a href="tel:769-8064<">769-8064</a><br/>
-      </p>
+import { getHtmlforCountry } from "../../utils"
+
+export const MentalWarning = (
+  dispatch,
+  index,
+  items,
+  symptoms,
+  country = "trinindad"
+) => {
+  const data = useStaticQuery(GetData)
+
+  const info = getHtmlforCountry(data.allMdx.edges, country)
+
+  return (
+    <div key="mentalWarning" className="card">
+      <div className="card__info">
+        <MDXRenderer>{info.node.body}</MDXRenderer>
+      </div>
     </div>
-  </div>
-)
+  )
+}
+
+const GetData = graphql`
+  query {
+    allMdx(filter: { frontmatter: { name: { regex: "/mentalWarning/" } } }) {
+      edges {
+        node {
+          body
+          frontmatter {
+            type
+            name
+            country
+          }
+        }
+      }
+    }
+  }
+`
