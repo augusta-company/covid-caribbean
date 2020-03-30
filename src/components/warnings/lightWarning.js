@@ -9,7 +9,7 @@ export const LightWarning = (
   index,
   items,
   symptoms,
-  country = "trinindad"
+  country = "trinidad"
 ) => {
   const data = useStaticQuery(GetData)
 

@@ -10,7 +10,7 @@ export const CloseContact = (
   index,
   items,
   symptoms,
-  country = "trinindad"
+  country = "trinidad"
 ) => {
   const data = useStaticQuery(GetData)
 

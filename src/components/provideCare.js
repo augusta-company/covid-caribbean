@@ -10,7 +10,7 @@ export const ProvideCare = (
   index,
   items,
   symptoms,
-  country = "trinindad"
+  country = "trinidad"
 ) => {
   const data = useStaticQuery(GetData)
 
