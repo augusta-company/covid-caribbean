@@ -10,6 +10,9 @@
   text-align: center;
 }
 
+.intro {
+  text-align: center;
+}
 .questionnaire {
   margin-top: 20px;
   width: 100%;
@@ -66,6 +69,33 @@ button:active, button:focus {
   color: #FFF
 }
 
+.countries-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.add-country {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.add-country__plus {
+  font-size: 30px;
+  color: #000;
+}
+
+.add-country__text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.mb-sm {
+  margin-bottom: 10px;
+}
 @keyframes moveDown {
   0% {
     opacity: 0;
@@ -85,4 +115,33 @@ button:active, button:focus {
     height: auto;
     width: auto;
   }
+
+  .scroll-instruction {
+    display: none;
+  }
+
+  .countries-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .add-country {
+    height: 200px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+    margin-right: 0;
+  }
+  
+  .add-country__plus {
+    font-size: 60px;
+    color: #000;
+  }
+
+  .add-country__text {
+    flex-grow: 0;
+  } 
 }

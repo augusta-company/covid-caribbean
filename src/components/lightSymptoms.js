@@ -10,7 +10,7 @@ export const LightSymptomps = (
   index,
   items,
   symptoms,
-  country = "trinidad"
+  country = "trinidad-and-tobago"
 ) => {
   const data = useStaticQuery(GetData)
 

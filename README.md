@@ -21,11 +21,11 @@
 <h2>Table of Contents</h2>
 
 1. Installation and Usage
-2. What's Inside
-3. Code of Conduct
-4. Contributing
-5. Style Guides
-6. License
+1. What's Inside
+1. Code of Conduct
+1. Contributing
+1. Style Guides
+1. License
 
 <h3> 🚀 Installation and Usage</h3>
 

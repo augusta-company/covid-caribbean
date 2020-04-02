@@ -9,7 +9,7 @@ export const MentalWarning = (
   index,
   items,
   symptoms,
-  country = "trinidad"
+  country = "trinidad-and-tobago"
 ) => {
   const data = useStaticQuery(GetData)
 

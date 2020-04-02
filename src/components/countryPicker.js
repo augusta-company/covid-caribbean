@@ -2,7 +2,7 @@ import React from "react"
 import { navigate } from "gatsby"
 import Select from "react-select"
 
-const options = [{ value: "trinidad", label: "Trinidad And Tobago" }]
+const options = [{ value: "trinidad-and-tobago", label: "Trinidad And Tobago" }]
 
 export const CountryPicker = () => {
   const handleChange = selectedOption => {
