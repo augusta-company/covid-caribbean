@@ -5,10 +5,7 @@ import "./countryCard.css"
 
 export const CountryCard = ({ country, casesData }) => {
   return (
-    <Link
-      to={`/${country.slug}`}
-      style={{ textDecoration: "none", color: "inherit" }}
-    >
+    <Link to={`/${country.slug}`} className="country-wrapper">
       <div className="country__card">
         <div className="country__info">
           <span className="country__flag" role="img" aria-label="attention">

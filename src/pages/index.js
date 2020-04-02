@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-
 import countriesData from "../constants/countries"
 import Augusta from "../svgs/power-augusta.svg"
 import Layout from "../components/layout"
@@ -25,12 +24,27 @@ const IndexPage = () => {
       })
       .catch(err => {
         setError("There was an error fetching the cases")
+        setTimeout(() => {
+          setError("")
+        }, 3000)
       })
   }, [])
 
   return (
     <Layout>
       <SEO title="Home" />
+      {Boolean(error) && (
+        <div
+          style={{
+            backgroundColor: "#de263e",
+            color: "whitesmoke",
+            width: "100%",
+            padding: "8px 10px",
+          }}
+        >
+          <span>{error}</span>
+        </div>
+      )}
       <h1 className="title">Covid Caribbean Resources</h1>
       <a
         href="https://health.augusta.company/"
@@ -44,12 +58,9 @@ const IndexPage = () => {
       </a>
       <div>
         <p className="intro">
-          This self-assessment tool will help determine whether you may need
-          further assessment or testing for COVID-19. You can complete this
-          assessment for yourself, or on behalf of someone else. If you have
-          respiratory symptoms and a serious ongoing condition, or are in the
-          third trimester of pregnancy, please follow the advice of your
-          specialist.
+          The latest updates, trusted resources, and symptom checking. This
+          online tool will determine whether you may need further assessment or
+          testing for COVID-19. Please select the country you are in.
         </p>
         <p
           className="scroll-instruction"
@@ -66,10 +77,17 @@ const IndexPage = () => {
             />
           ))}
 
-          <div className="country__card add-country">
-            <span className="add-country__plus">+</span>
-            <span className="add-country__text">Add your country</span>
-          </div>
+          <a
+            href={`https://github.com/augusta-company/covid-caribbean`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="add-country__wrapper"
+          >
+            <div className="country__card add-country">
+              <span className="add-country__plus">+</span>
+              <span className="add-country__text">Add your country</span>
+            </div>
+          </a>
         </div>
       </div>
     </Layout>
