@@ -10,7 +10,7 @@ export const TravelOutside = (
   index,
   items,
   symptoms,
-  country = "trinidad"
+  country = "trinidad-and-tobago"
 ) => {
   const data = useStaticQuery(GetData)
 

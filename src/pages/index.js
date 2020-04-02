@@ -1,39 +1,37 @@
-import React, { useReducer } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React, { useEffect, useState } from "react"
 
+import countriesData from "../constants/countries"
+import Augusta from "../svgs/power-augusta.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { EntryQuestion } from "../components/entryQuestion"
-import { CountryPicker } from "../components/countryPicker"
-import CoatWithName from "../svgs/coat.svg"
-import Augusta from "../svgs/power-augusta.svg"
-import reducer from "../reducer"
+import { CountryCard } from "../components/countryCard"
+import { getCasesData } from "../utils"
 import "../styles.css"
 
-const initalState = { items: [], symptoms: false }
-
-const query = graphql`
-  query {
-    currentBuildDate {
-      currentDate
-    }
-  }
-`
-
 const IndexPage = () => {
-  const [state, dispatch] = useReducer(reducer, initalState)
-  const data = useStaticQuery(query)
+  let [casesData, setCasesData] = useState({})
+  let [error, setError] = useState("")
+  useEffect(() => {
+    let endResult = {}
+    const promises = countriesData.map(country => getCasesData(country.slug))
+
+    Promise.all(promises)
+      .then(result => {
+        result.forEach(
+          ({ slug, confirmed, recovered, deaths }) =>
+            (endResult[slug] = { confirmed, recovered, deaths })
+        )
+        setCasesData(endResult)
+      })
+      .catch(err => {
+        setError("There was an error fetching the cases")
+      })
+  }, [])
 
   return (
     <Layout>
       <SEO title="Home" />
-      <CountryPicker />
-      <div className="coat-container">
-        <CoatWithName />
-      </div>
-      <h1 className="title">
-        Trinidad and Tobago COVID-19 Symptom Self-Assessment Tool
-      </h1>
+      <h1 className="title">Covid Caribbean Resources</h1>
       <a
         href="https://health.augusta.company/"
         target="_blank"
@@ -45,130 +43,34 @@ const IndexPage = () => {
         </div>
       </a>
       <div>
-        <p>
+        <p className="intro">
           This self-assessment tool will help determine whether you may need
           further assessment or testing for COVID-19. You can complete this
-          assessment for yourself, or on behalf of someone else.
+          assessment for yourself, or on behalf of someone else. If you have
+          respiratory symptoms and a serious ongoing condition, or are in the
+          third trimester of pregnancy, please follow the advice of your
+          specialist.
         </p>
-        <p>
-          If you have respiratory symptoms and a serious ongoing condition, or
-          are in the third trimester of pregnancy, please follow the advice of
-          your specialist.
+        <p
+          className="scroll-instruction"
+          style={{ textAlign: "center", color: "#c9c9c9", margin: "40px 0" }}
+        >
+          Scroll down to view the entire list
         </p>
-        <p>
-          Most people do not need to be tested for COVID-19 because it will not
-          change your care.
-        </p>
-        <p>
-          <strong>
-            People who do not need to be tested for COVID-19 include:
-          </strong>
-        </p>
-        <ul>
-          <li>People without symptoms</li>
-          <li>
-            People who have mild respiratory symptoms that can be managed at
-            home
-          </li>
-        </ul>
+        <div className="countries-container">
+          {countriesData.map(country => (
+            <CountryCard
+              key={country.slug}
+              country={country}
+              casesData={casesData[country.slug]}
+            />
+          ))}
 
-        <p>
-          Anyone who has symptoms - including a fever, cough, sneezing, or sore
-          throat - should 
-          <a
-            href="http://www.health.gov.tt/images_cms/2020/CoronaVirus/Posters/Quarantine01.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            self-isolate
-          </a>{" "}
-          and immediately contact the listed hotlines. Continue to complete this
-          assessment to determine if you may need care.
-        </p>
-
-        <p>Last updated: {data.currentBuildDate.currentDate}</p>
-        <div className="card">
-          <div className="card__info">
-            <p>
-              The Trinidad and Tobago Ministry of Health has implemented
-              hotlines for questions and concerns. These hotlines are staffed by
-              a team of medical professionals and are available 24/7.
-              <br />
-              COVID-19 National Hotline -{" "}
-              <strong>
-                <a href="tel:877-9355">877-9355</a> (877-WELL)
-              </strong>
-              <br />
-              Southwest Region -{" "}
-              <strong>
-                <a href="tel:877-9724">877-9724</a> (87-SWRHA)
-              </strong>
-              <br />
-              Tobago -{" "}
-              <strong>
-                <a href="tel:800-4325">800-4325</a> (800-HEAL)
-              </strong>
-            </p>
-            <p>
-              For questions of concerns, the Trinidad and Tobago Ministry of
-              Health has a COVID-19 Hotline:{" "}
-              <strong>
-                <a href="tel:877-9355">877-9355</a> (877-WELL)
-              </strong>
-              , and the South-West Regional Health Authority COVID-19 Hotline:{" "}
-              <strong>
-                <a href="tel:877-9724">877-9724</a> (87-SWRHA)
-              </strong>
-            </p>
-            <p>
-              Social Media
-              <br />
-              <a
-                href="https://www.facebook.com/MinistryofHealthTT/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-              <br />
-              <a
-                href="https://twitter.com/MOH_TT"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Twitter
-              </a>
-              <br />
-              <a
-                href="https://www.health.gov.tt/sitepages/default.aspx?id=292"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Website
-              </a>
-            </p>
-
-            <p>
-              For the most up to date non-medical information, including
-              confirmed cases, travel restrictions, news, and updates you can
-              visit{" "}
-              <a
-                href="http://www.health.gov.tt/sitepages/default.aspx?id=292"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Trinidad and Tobago’s COVID-19 Support and Information
-              </a>
-              .
-            </p>
+          <div className="country__card add-country">
+            <span className="add-country__plus">+</span>
+            <span className="add-country__text">Add your country</span>
           </div>
         </div>
-      </div>
-      <div className="questionnaire">
-        {EntryQuestion(dispatch, 0, state.items, state.symptom, "trinidad")}
-        {state.items.map((item, index) =>
-          item.cmp(dispatch, index + 1, state.items, state.symptoms)
-        )}
       </div>
     </Layout>
   )

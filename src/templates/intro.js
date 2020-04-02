@@ -4,7 +4,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { CountryPicker } from "../components/countryPicker"
 import { EntryQuestion } from "../components/entryQuestion"
 import reducer from "../reducer"
 import "../styles.css"
@@ -18,7 +17,6 @@ export default function Template({ data, pageContext }) {
   return (
     <Layout>
       <SEO title="Home" />
-      <CountryPicker />
       <MDXRenderer title={pageContext.frontmatter.title}>
         {info.body}
       </MDXRenderer>

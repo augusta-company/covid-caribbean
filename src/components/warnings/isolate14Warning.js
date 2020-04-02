@@ -9,7 +9,7 @@ export const Isolate14Warning = (
   index,
   items,
   symptoms,
-  country = "trinidad"
+  country = "trinidad-and-tobago"
 ) => {
   const data = useStaticQuery(GetData)
 
